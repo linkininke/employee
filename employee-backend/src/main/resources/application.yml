@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: employee-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_db?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+jwt:
+  secret: employee-management-system-secret-key
+  expiration: 3600000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  packages-to-scan: com.example.employee.controller
+  paths-to-match: /**
